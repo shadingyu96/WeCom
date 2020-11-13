@@ -1,0 +1,41 @@
+create_user:
+  method: post
+  params:
+    access_token: $token
+  json:
+    department: $department
+    mobile: $mobile
+    name: $name
+    userid: $userid
+  url: https://${ip}/cgi-bin/user/create
+
+get_user:
+  method: get
+  params:
+    access_token: $token
+    userid: $userid
+    name: $name
+  url: https://${ip}/cgi-bin/user/get
+
+update_user:
+  method: post
+  params:
+    access_token: $token
+  json:
+    userid: $userid
+    name: $name
+  url: https://${ip}/cgi-bin/user/update
+
+delete_user:
+  method: get
+  params:
+    access_token: $token
+    userid: $userid
+  url: https://${ip}/cgi-bin/user/delete
+
+batchdelete_user:
+  method: post
+  params:
+    access_token: $token
+    useridlist: useridlist
+  url: https://${ip}/cgi-bin/user/batchdelete
